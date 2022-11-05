@@ -205,7 +205,8 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_USES_MIUI_DOLBY),true)
 # Miui Dolby Engine Topic
 # Dolby Sepolicy
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/dolby
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/dolby/private
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/dolby/vendor
 
 # Dolby Props
 PRODUCT_VENDOR_PROPERTIES += \
@@ -213,6 +214,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.dolby.dax.version=DAX3_3.6 \
     ro.vendor.audio.dolby.dax.support=true \
     ro.vendor.audio.dolby.surround.enable=true
+
+# Dolby Effects Props
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.audio.delta.refresh=true
 
 # Dolby Permissions
 PRODUCT_COPY_FILES += \
@@ -234,7 +239,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.audio.misound.disable=false \
     ro.vendor.audio.misound.bluetooth.enable=true
 endif
-
 
 # Display
 PRODUCT_PACKAGES += \
