@@ -360,15 +360,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "ForegroundCpuset",
-      "Path": "/dev/cpuset/foreground/cpus",
-      "Values": [
-        "0-5",
-        "0-5,7"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -510,12 +501,6 @@
       "Node": "TASchedtuneBoost",
       "Duration": 1000,
       "Value": "30"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "ForegroundCpuset",
-      "Duration": 5000,
-      "Value": "0-5"
     },
     {
       "PowerHint": "LAUNCH",
