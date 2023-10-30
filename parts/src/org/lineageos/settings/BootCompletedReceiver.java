@@ -44,7 +44,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) return;
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
         try {
@@ -56,12 +55,19 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         ThermalUtils.startService(context);
         RefreshUtils.startService(context);
         FileUtils.enableService(context);
+        // Pocket
+        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) return;
+        if (DEBUG)
+            Log.d(TAG, "Received boot completed intent");
+        try {
+            PocketService.startService(context);
+        } catch (Exception e) {
+            Log.d(TAG, "Exception", e);
+        }
 
         boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
         FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
-
-        // Pocket
-        PocketService.startService(context);
+        
 
     }
 }
