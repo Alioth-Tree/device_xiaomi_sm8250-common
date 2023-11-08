@@ -343,7 +343,7 @@
       "Name": "PMQoSCpuDmaLatency",
       "Path": "/dev/cpu_dma_latency",
       "Values": [
-        "3d",
+        "2c",
         "100"
       ],
       "HoldFd": true
@@ -570,7 +570,7 @@
       "PowerHint": "LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 3000,
-      "Value": "3d"
+      "Value": "2c"
     },
     {
       "PowerHint": "LAUNCH",
@@ -660,7 +660,7 @@
       "PowerHint": "ML_ACC",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
-      "Value": "3d"
+      "Value": "2c"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
