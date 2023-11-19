@@ -351,6 +351,9 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mlipay@1.1.vendor \
     vendor.xiaomi.hardware.mtdservice@1.2.vendor
 
+# Miuicamera
+TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT := true
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
