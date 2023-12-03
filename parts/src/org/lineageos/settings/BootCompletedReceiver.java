@@ -45,7 +45,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             return;
         }
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        DolbyUtils.getInstance(context).onBootCompleted()
+        DolbyUtils.getInstance(context).onBootCompleted();
         ThermalUtils.startService(context);
         RefreshUtils.startService(context);
         FileUtils.enableService(context);
