@@ -1,1 +1,1 @@
-git clone https://github.com/DanipunK1/packages_apps_ViPER4AndroidFX packages/apps/ViPER4AndroidFX
+git clone https://github.com/Alioth-Tree/packages_apps_ViPER4AndroidFX.git packages/apps/ViPER4AndroidFX
